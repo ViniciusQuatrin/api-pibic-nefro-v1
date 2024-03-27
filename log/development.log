@@ -1,0 +1,38 @@
+  [1m[35m (57.2ms)[0m  [1m[35mCREATE DATABASE `api_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE DATABASE `api_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (118.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (45.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (48.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (14.9ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-03-27 15:31:43.817052', '2024-03-27 15:31:43.817057')[0m
+Migrating to DeviseCreateUsers (20240327134926)
+  [1m[35m (101.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime(6), `remember_created_at` datetime(6), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (109.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[35m (163.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (26.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240327134926')[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT GET_LOCK('5878493172211724820', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to CreatePatients (20240327154241)
+  [1m[35m (299.9ms)[0m  [1m[35mCREATE TABLE `patients` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `name` varchar(255), `sex` int, `creatinine` decimal, `race` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_patients_on_user_id` (`user_id`), CONSTRAINT `fk_rails_623f05c630`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (19.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240327154241')[0m
+Migrating to CreateQuestions (20240327154315)
+  [1m[35m (68.3ms)[0m  [1m[35mCREATE TABLE `questions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `question` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (20.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240327154315')[0m
+Migrating to CreatePatientQuestions (20240327155256)
+  [1m[35m (147.9ms)[0m  [1m[35mCREATE TABLE `patient_questions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `patient_id` bigint NOT NULL, `question_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_patient_questions_on_patient_id` (`patient_id`), INDEX `index_patient_questions_on_question_id` (`question_id`), CONSTRAINT `fk_rails_6291394fb8`
+FOREIGN KEY (`patient_id`)
+  REFERENCES `patients` (`id`)
+, CONSTRAINT `fk_rails_0ef34dc8c1`
+FOREIGN KEY (`question_id`)
+  REFERENCES `questions` (`id`)
+)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (10.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240327155256')[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
