@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_27_155256) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_28_162857) do
+  create_table "doctors", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "crm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_doctors_on_user_id"
+  end
+
   create_table "patient_questions", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "patient_id", null: false
     t.bigint "question_id", null: false
@@ -49,6 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_27_155256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "doctors", "users"
   add_foreign_key "patient_questions", "patients"
   add_foreign_key "patient_questions", "questions"
   add_foreign_key "patients", "users"
