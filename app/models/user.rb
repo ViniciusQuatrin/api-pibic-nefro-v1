@@ -4,6 +4,9 @@ class User < ApplicationRecord
 
   include DeviseTokenAuth::Concerns::User
 
+  has_one :patient
+  has_one :doctor
+
   validates :name, presence: true
   validates :profile, presence: true
 
