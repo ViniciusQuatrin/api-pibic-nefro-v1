@@ -6,6 +6,7 @@ class CreatePatients < ActiveRecord::Migration[7.1]
       t.integer :sex
       t.decimal :creatinine
       t.integer :race
+      t.decimal
 
       t.timestamps
     end
