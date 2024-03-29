@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_one :doctor
 
   validates :name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :profile, presence: true
 
   enum profile: { patient: 0, doctor: 1, admin: 2 }
