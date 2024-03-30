@@ -162,3 +162,13 @@ FOREIGN KEY (`patient_id`)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('5878493172211724820')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started POST "/v1//question?title=Perda%20r%C3%A1pida%20da%20fun%C3%A7%C3%A3o%20renal&shor=perda%20fun%C3%A7%C3%A3o%20renal&question=O%20paciente%20possui%20Perda%20r%C3%A1pida%20da%20fun%C3%A7%C3%A3o%20renal%20?%20Maior%20que%205%20ml/min/%201.73%20m2,%20confirmados%20em%20dois%20exames%20em%20um%20intervalo%20de%206%20meses." for ::1 at 2024-03-30 15:14:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/v1/question"):
+  
+Started POST "/v1//question?title=Perda%20r%C3%A1pida%20da%20fun%C3%A7%C3%A3o%20renal&shor=perda%20fun%C3%A7%C3%A3o%20renal&question=O%20paciente%20possui%20Perda%20r%C3%A1pida%20da%20fun%C3%A7%C3%A3o%20renal%20?%20Maior%20que%205%20ml/min/%201.73%20m2,%20confirmados%20em%20dois%20exames%20em%20um%20intervalo%20de%206%20meses." for ::1 at 2024-03-30 15:21:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/v1/question"):
+  
