@@ -1,29 +1,50 @@
 module Api::V1
-  class UsersController < ApplicationController
-    def index
-      render json: User.all
-    end
+  class UsersController < ApiController
+    before_action :load_user, only: [:show, :update, :destroy]
 
-    def show
-      render json: User.find(params[:id])
+    def index
+      scope_without_current_user = User.where.not(id: current_user.id)
+      permitted = params.permit({ search: :name }, { order: {} }, :page, :per_page)
+      @loading_service = ModelLoadingService.new(scope_without_current_user, permitted)
+      @loading_service.call
     end
 
     def create
-      render json: User.create(user_params)
+      @user = User.new
+      @user.attributes = user_params
+      save_user!
     end
 
     def update
-      render json: User.find(params[:id]).update(user_params)
+      @user.attributes = user_params
+      save_user!
     end
 
+    def show; end
+
+
     def destroy
-      render json: User.find(params[:id]).destroy
+      @user.destroy!
+    rescue
+      render_error(fields: @user.errors.messages)
     end
 
     private
 
+    def load_user
+      @user = User.find(params[:id])
+    end
+
     def user_params
-      params.require(:user).permit(:name, :email, :profile, :password, :password_confirmation)
+      return {} unless params.has_key?(:user)
+      params.require(:user).permit(:id, :name, :email, :profile, :password, :password_confirmation)
+    end
+
+    def save_user!
+      @user.save
+      render :show
+    rescue
+      render_error(fields: @user.errors.messages)
     end
   end
 end
