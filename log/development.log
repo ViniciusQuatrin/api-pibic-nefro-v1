@@ -172,3 +172,23 @@ Started POST "/v1//question?title=Perda%20r%C3%A1pida%20da%20fun%C3%A7%C3%A3o%20
   
 ActionController::RoutingError (No route matches [POST] "/v1/question"):
   
+Started GET "/" for 127.0.0.1 at 2024-03-31 12:51:40 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 12:51:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (13.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+Processing by PagesController#home as HTML
+Completed 200 OK in 148ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1706)
+
+
+Completed 200 OK in 166ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1766)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-03-31 12:51:43 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2024-03-31 12:58:15 -0300
+Processing by PagesController#home as */*
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 61)
+
+
