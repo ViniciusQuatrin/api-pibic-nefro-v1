@@ -1,4 +1,4 @@
-module Api::V1
+module Admin::V1
   class ApiController < ApplicationController
     class ForbiddenAccess < StandardError; end
     include Authenticable

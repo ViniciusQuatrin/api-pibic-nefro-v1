@@ -207,3 +207,182 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 55)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:00 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:00 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by PagesController#home as HTML
+Processing by PagesController#home as HTML
+Processing by PagesController#home as HTML
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1110)
+
+
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1147)
+
+
+Completed 200 OK in 4ms (Views: 0.0ms | ActiveRecord: 0.0ms | Allocations: 1203)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:13 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:13 -0300
+Processing by PagesController#home as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Processing by PagesController#home as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:47:13 -0300
+Processing by PagesController#home as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-31 15:25:56 -0300
+Processing by PagesController#home as HTML
+Completed 200 OK in 47ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-31 15:27:19 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 15:27:19 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 15:27:19 -0300
+Processing by PagesController#home as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Processing by PagesController#home as HTML
+Processing by PagesController#home as HTML
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Started GET "/v1/users" for ::1 at 2024-03-31 16:23:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1//questions" for ::1 at 2024-03-31 16:23:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/v1/questions"):
+  
+Started GET "/v1/users" for ::1 at 2024-03-31 16:30:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/admin/v1/users" for ::1 at 2024-03-31 16:33:59 -0300
+  
+NameError (uninitialized constant Api::V1::ApiController):
+  
+app/controllers/admin/v1/users_controller.rb:2:in `<module:V1>'
+app/controllers/admin/v1/users_controller.rb:1:in `<main>'
+Started GET "/admin/v1/users" for ::1 at 2024-03-31 16:34:24 -0300
+  
+NameError (uninitialized constant Api::V1::ApiController):
+  
+app/controllers/admin/v1/users_controller.rb:2:in `<module:V1>'
+app/controllers/admin/v1/users_controller.rb:1:in `<main>'
+Started GET "/admin/v1/questions" for ::1 at 2024-03-31 16:34:33 -0300
+  
+ActionController::RoutingError (uninitialized constant Admin::V1::QuestionsController):
+  
+Started GET "/admin/v1/doctors" for ::1 at 2024-03-31 16:34:53 -0300
+  
+ActionController::RoutingError (uninitialized constant Admin::V1::DoctorsController):
+  
+Started GET "/admin/v1/users" for ::1 at 2024-03-31 16:34:58 -0300
+  
+NameError (uninitialized constant Api::V1::ApiController):
+  
+app/controllers/admin/v1/users_controller.rb:2:in `<module:V1>'
+app/controllers/admin/v1/users_controller.rb:1:in `<main>'
+Started GET "/admin/v1/users" for ::1 at 2024-03-31 16:50:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Admin::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1055)
+
+
+  
+NoMethodError (undefined method `authenticate_user!' for #<Admin::V1::UsersController:0x0000000000b6d0>):
+  
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:109:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+rack-cors (2.0.2) lib/rack/cors.rb:102:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/admin/v1/users" for ::1 at 2024-03-31 16:51:52 -0300
+Processing by Admin::V1::UsersController#index as */*
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 848)
+
+
+  
+NameError (uninitialized constant Admin::V1::ApiController::Current):
+  
+app/controllers/admin/v1/api_controller.rb:17:in `restrict_access_to_admin!'

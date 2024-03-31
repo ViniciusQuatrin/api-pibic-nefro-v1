@@ -1,12 +1,14 @@
-module Api::V1
+module Admin::V1
   class UsersController < ApiController
     before_action :load_user, only: [:show, :update, :destroy]
 
     def index
-      scope_without_current_user = User.where.not(id: current_user.id)
-      permitted = params.permit({ search: :name }, { order: {} }, :page, :per_page)
-      @loading_service = ModelLoadingService.new(scope_without_current_user, permitted)
-      @loading_service.call
+      @users = User.all
+      render json: @users
+      # scope_without_current_user = User.where.not(id: Current.user.id)
+      # permitted = params.permit({ search: :name }, { order: {} }, :page, :per_page)
+      # @loading_service = ModelLoadingService.new(scope_without_current_user, permitted)
+      # @loading_service.call
     end
 
     def create
@@ -36,7 +38,6 @@ module Api::V1
     end
 
     def user_params
-      return {} unless params.has_key?(:user)
       params.require(:user).permit(:id, :name, :email, :profile, :password, :password_confirmation)
     end
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
 
-  namespace :api do
+  namespace :admin do
     namespace :v1 do
       resources :users
       resources :questions
