@@ -192,3 +192,18 @@ Processing by PagesController#home as */*
 Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 61)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:37:05 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:37:05 -0300
+Started GET "/" for 127.0.0.1 at 2024-03-31 13:37:05 -0300
+Processing by PagesController#home as HTML
+Processing by PagesController#home as HTML
+Completed 200 OK in 61ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
+Processing by PagesController#home as HTML
+Completed 200 OK in 26ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 55)
+
+
