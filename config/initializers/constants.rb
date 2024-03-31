@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 DIV_MALE = 0.9
 DIV_FEMALE = 0.7
 POW_MIN_MALE = -0.411

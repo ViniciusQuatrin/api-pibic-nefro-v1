@@ -14,7 +14,7 @@ module Api::V1
 
     private
     def restrict_access_to_admin!
-      raise ForbiddenAccess unless current_user.admin?
+      raise ForbiddenAccess unless Current.user.admin?
     end
   end
 end
