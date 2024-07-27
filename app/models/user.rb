@@ -12,4 +12,16 @@ class User < ApplicationRecord
   validates :profile, presence: true
 
   enum profile: { patient: 0, doctor: 1, admin: 2 }
+
+  def patient?
+    self.profile == "patient"
+  end
+
+  def doctor?
+    self.profile == "doctor"
+  end
+
+  def admin?
+    self.profile == "admin"
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_29_181408) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_03_215335) do
   create_table "appointments", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
     t.bigint "doctor_id", null: false
     t.bigint "patient_id", null: false
@@ -37,6 +37,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_181408) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_exams_on_patient_id"
+  end
+
+  create_table "nefrocheck_evaluations", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.decimal "tfg", precision: 10
+    t.boolean "referral_needed"
+    t.string "message"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_nefrocheck_evaluations_on_patient_id"
   end
 
   create_table "patient_questions", charset: "utf8mb3", collation: "utf8mb3_general_ci", force: :cascade do |t|
@@ -82,9 +93,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_181408) do
     t.text "tokens", size: :long, collation: "utf8mb4_bin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid"], name: "index_users_on_uid"
     t.check_constraint "json_valid(`tokens`)", name: "tokens"
   end
 
@@ -92,6 +106,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_29_181408) do
   add_foreign_key "appointments", "patients"
   add_foreign_key "doctors", "users"
   add_foreign_key "exams", "patients"
+  add_foreign_key "nefrocheck_evaluations", "patients"
   add_foreign_key "patient_questions", "patients"
   add_foreign_key "patient_questions", "questions"
   add_foreign_key "patients", "users"

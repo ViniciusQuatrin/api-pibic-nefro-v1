@@ -1,5 +1,7 @@
 require "active_support/core_ext/integer/time"
 
+Rails.application.config.session_store :cookie_store, key: 'session'
+
 Rails.application.configure do
  
   config.enable_reloading = true
